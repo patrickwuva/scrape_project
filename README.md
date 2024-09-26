@@ -9,4 +9,5 @@ problems to deal with:
 - there are probbaly ~ 750,000 offenders in America
 - how do we scrape all offender data in a reasonable amount of time
 - the website is not a fan of us spamming them
-- how do we store all of the data we collect 
+- how do we store all of the data we collect
+
