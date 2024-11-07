@@ -44,13 +44,7 @@ def publish_messages():
     zips = [str(z) for z in zips if len(str(z)) == 5]
 
     total = 0
-    """
-    data_str = json.dumps(["22903"])
-    data = data_str.encode("utf-8")
-    for i in range(0, 5):
-        future = publisher.publish(topic_path, data)
-        print(future.result())
-    """
+    
     for i in range(0, len(zips), 5):
         data_str = json.dumps(zips[i:i+5])
         data = data_str.encode("utf-8")

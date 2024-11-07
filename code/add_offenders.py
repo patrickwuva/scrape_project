@@ -1,6 +1,9 @@
 import psycopg2
 import json
 from based import based
+import logging 
+logging.basicConfig(level=logging.INFO)
+
 
 def get_home_addr(locations):
     for data in locations:
@@ -63,6 +66,8 @@ def insert_offenders(offenders):
         try:
             db.cursor.executemany(query, offender_values)
             db.connection.commit()
+            logging.info(f'uploaded offenders to db')
+
         except Exception as e:
             print(f'error: {e}')
             db.connection.rollback()

@@ -16,18 +16,14 @@ def load_proxies(file_path):
         proxies = f.read().splitlines()
     return proxies
 
-proxies_list = load_proxies("endpoints.txt")
+proxies_list = load_proxies("proxies.txt")
 proxy_index = 0
 retry_zips = []
 
 def get_offenders(zip_arr):
-    #proxy = get_next_proxy()
-    proxy = "http://customer-patrick_5zLji-cc-us:OX___psalm3422@pr.oxylabs.io:7777"
-    #proxy = 'http://spxwhjvleu:Bydk9qPurElL5_3q1v@us.smartproxy.com:10000'
     proxies = {
-        "http": proxy
+        'http': get_next_proxy()
     }
-
     search_url = "https://nsopw-api.ojp.gov/nsopw/v1/v1.0/search"
 
     search_headers = {
@@ -90,7 +86,7 @@ def get_offenders(zip_arr):
 
     return None
 
-
+"""
 def main():
     us_zips = pd.read_csv('zips.csv')
     zips = us_zips[us_zips['state'] == 'NY']['zip'].tolist()
@@ -118,3 +114,4 @@ def main():
     
 if __name__ == '__main__':
     main()
+"""

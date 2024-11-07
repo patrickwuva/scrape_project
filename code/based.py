@@ -2,9 +2,9 @@ import psycopg2
 
 class based:
     def __init__(self):
-        #self.info = "host='34.48.163.96' port='5432' user='tpv' password='PSpsalm14!!!' dbname='tpv-dev' sslmode = 'require'"
+        self.info = "host='34.48.163.96' port='5432' user='tpv' password='PSpsalm14!!!' dbname='tpv-dev' sslmode = 'require'"
         
-        self.info = "host='34.48.99.7' port='5432' user='tpv' password=';AQ}*DHKfO6gVDH4' dbname='tpvdb' sslmode = 'require'"
+        #self.info = "host='34.48.99.7' port='5432' user='tpv' password=';AQ}*DHKfO6gVDH4' dbname='tpvdb' sslmode = 'require'"
         self.connection = None
         self.cursor = None
     def connect(self):

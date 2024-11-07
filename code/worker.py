@@ -6,7 +6,7 @@ import json
 import threading
 
 project_id = "global-sun-431221-s9"
-subscription_id = "scrape"
+subscription_id = "boss-to-cloudrun"
 ack_topic_id = 'taskmaster-acks'
 
 subscriber = pubsub_v1.SubscriberClient()
@@ -26,7 +26,7 @@ def callback(message):
         message.ack()
 
 def push_images(message):
-    data_str = message.data.decode('utf-8')
+    data_str = message.data.decode('utf-8')['']
     links = json.loads(data_str)
     print(links)
     try:
