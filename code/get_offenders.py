@@ -3,7 +3,6 @@ import json
 from add_offenders import clean_offenders, insert_offenders
 import time
 import pandas as pd
-import threading
 
 def get_next_proxy():
     global proxy_index
@@ -85,33 +84,3 @@ def get_offenders(zip_arr):
         print(f"An error occurred: {exc} for zip {zip_arr}")
 
     return None
-
-"""
-def main():
-    us_zips = pd.read_csv('zips.csv')
-    zips = us_zips[us_zips['state'] == 'NY']['zip'].tolist()
-    zips = [str(z) for z in zips]
-    for i in range(len(zips)):
-        z = zips[i]
-        if len(z) < 5:
-            zeros = 5-len(z)
-            zips[i] = '0' * zeros + z
-    
-    zips = zips[:500]
-    max_threads = 50
-    threads = []
-    for zip in zips:
-        if len(threads) > max_threads:
-            for thread in threads:
-                thread.join()
-            threads.clear()
-
-        thread = threading.Thread(target=insert_offenders, args=(get_offenders([zip]),))
-        threads.append(thread)
-
-    for thread in threads:
-        thread.join()
-    
-if __name__ == '__main__':
-    main()
-"""
